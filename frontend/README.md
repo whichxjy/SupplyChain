@@ -1,4 +1,4 @@
-# Supply Chain
+# Supply Chain Front-End
 
 ## Project setup
 ```
