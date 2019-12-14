@@ -66,6 +66,7 @@ route.get('/orgs', (req, res) => {
                 names: names
             });
         })
+        .catch(err => { console.log(err) });
 });
 
 // add payment
@@ -80,8 +81,10 @@ route.post('/payment', (req, res) => {
                             res.status(204).json(null);
                         })
                         .catch(err => { console.log(err) });
-                });
-        });
+                })
+                .catch(err => { console.log(err) });
+        })
+        .catch(err => { console.log(err) });
 });
 
 // transfer payment
