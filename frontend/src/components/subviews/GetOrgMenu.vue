@@ -59,13 +59,7 @@ export default {
                                     + "仍未支付的款项为 " + org.moneyToPay + " 元" + "，"
                                     + "仍未收到的款项为 " + org.moneyToReceive + " 元。"
                         this.$alert(text, '具体信息', {
-                            confirmButtonText: '确定',
-                            callback: action => {
-                                this.$message({
-                                    type: 'info',
-                                    message: `action: ${ action }`
-                                });
-                            }
+                            confirmButtonText: '确定'
                         });
                     }
                 })
