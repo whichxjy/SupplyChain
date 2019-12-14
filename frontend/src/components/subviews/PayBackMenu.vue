@@ -51,7 +51,6 @@ export default {
                 });
                 return;
             }
-            
             this.$http.delete("/payment", {
                     params: {
                         name: this.form.name,
