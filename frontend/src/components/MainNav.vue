@@ -1,5 +1,5 @@
 <template>
-<el-menu class="main-nav" @select="handleSelect" :router="true" mode="horizontal">
+<el-menu class="main-nav" :router="true" mode="horizontal">
     <el-submenu index="add">
         <template slot="title">
             添加
@@ -31,11 +31,6 @@
 
 <script>
 export default {
-    name: 'MainNav',
-    methods: {
-        handleSelect(key, keyPath) {
-            console.log(key, keyPath);
-        }
-    }
+    name: 'MainNav'
 }
 </script>
