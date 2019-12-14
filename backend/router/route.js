@@ -1,7 +1,5 @@
 const express = require('express');
-
 const chain = require('../chain/chain');
-
 const route = express.Router();
 const repository = require('../repository/repo');
 
@@ -13,7 +11,7 @@ route.post('/org', (req, res) => {
         .then(id => {
             // store to db
             repository.create(name, id, isCompany)
-                .then(_ => {
+                .then(() => {
                     res.status(201).json({
                         name: name,
                         id: id,

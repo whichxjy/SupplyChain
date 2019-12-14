@@ -31,7 +31,7 @@ export default {
             }
             const org = {
                 name: this.form.name,
-                isCompany: true,
+                isCompany: false,
                 certified: this.form.certified
             }
             this.$http.post("/org", org)
