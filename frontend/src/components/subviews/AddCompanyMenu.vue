@@ -36,7 +36,7 @@ export default {
             }
             this.$http.post("/org", org)
                 .then(() => {
-                    this.$message('添加成功公司！');
+                    this.$message('成功添加公司！');
                 })
                 .catch(err => {
                     console.log(err);
