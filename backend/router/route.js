@@ -21,7 +21,8 @@ route.post('/org', (req, res) => {
                     });
                 })
                 .catch(err => console.log(err));
-        });
+        })
+        .catch(err => { console.log(err) });
 });
 
 // get org
@@ -44,9 +45,12 @@ route.get('/org', (req, res) => {
                                         moneyToPay: org.moneyToPay,
                                         moneyToReceive: org.moneyToReceive
                                     });
-                                });
-                        });
-                });
+                                })
+                                .catch(err => { console.log(err) });
+                        })
+                        .catch(err => { console.log(err) });
+                })
+                .catch(err => { console.log(err) });
         })
         .catch(() => {
             res.status(404).json(null);
@@ -92,8 +96,10 @@ route.put('/payment', (req, res) => {
                             res.status(204).json(null);
                         })
                         .catch(err => { console.log(err) });
-                });
-        });
+                })
+                .catch(err => { console.log(err) });
+        })
+        .catch(err => { console.log(err) });
 });
 
 // fund
@@ -108,8 +114,10 @@ route.post('/fund', (req, res) => {
                             res.status(204).json(null);
                         })
                         .catch(err => { console.log(err) });
-                });
-        });
+                })
+                .catch(err => { console.log(err) });
+        })
+        .catch(err => { console.log(err) });
 });
 
 // get reputation
@@ -124,7 +132,8 @@ route.delete('/payment', (req, res) => {
                     });
                 })
                 .catch(err => { console.log(err) });
-        });
+        })
+        .catch(err => { console.log(err) });
 });
 
 module.exports = route;
