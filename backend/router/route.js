@@ -67,6 +67,18 @@ route.get('/orgs', (req, res) => {
         .catch(err => { console.log(err) });
 });
 
+// get fis
+route.get('/fis', (req, res) => {
+    repository.findAllFI()
+        .then(fis => fis.map(org => org.name))
+        .then(names => {
+            res.status(200).json({
+                names: names
+            });
+        })
+        .catch(err => { console.log(err) });
+});
+
 // add payment
 route.post('/payment', (req, res) => {
     const { fromName, toName, amount, payBackEndTime, description } = req.body.params;

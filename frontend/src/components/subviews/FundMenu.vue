@@ -2,12 +2,12 @@
 <el-form ref="fund-form" :model="form">
     <el-form-item label="融资方">
         <el-select v-model="form.fromName" filterable placeholder="请选择" v-bind:loading="loading">
-            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+            <el-option v-for="item in compOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
     </el-form-item>
     <el-form-item label="出资方（金融机构）">
         <el-select v-model="form.toName" filterable placeholder="请选择" v-bind:loading="loading">
-            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value"></el-option>
+            <el-option v-for="item in fiOptions" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
     </el-form-item>
     <el-form-item label="融资金额（整数）">
@@ -35,7 +35,8 @@ export default {
                 description: ""
             },
             loading: false,
-            options: []
+            compOptions: [],
+            fiOptions: []
         };
     },
     mounted: function () {
@@ -43,13 +44,25 @@ export default {
         this.$http.get("/orgs")
             .then(res => {
                 const names = JSON.parse(res.request.response).names;
-                const options = names.map(name => {
+                const compOptions = names.map(name => {
                     return {
                         value: name,
                         label: name
                     }
                 });
-                this.$set(this, 'options', options);
+                this.$set(this, 'compOptions', compOptions);
+                this.loading = false;
+            });
+        this.$http.get("/fis")
+            .then(res => {
+                const names = JSON.parse(res.request.response).names;
+                const fiOptions = names.map(name => {
+                    return {
+                        value: name,
+                        label: name
+                    }
+                });
+                this.$set(this, 'fiOptions', fiOptions);
                 this.loading = false;
             });
     },

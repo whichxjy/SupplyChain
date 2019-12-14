@@ -12,9 +12,14 @@ class OrgRepository {
         return org.save();
     }
 
-    // return all orgs
+    // find all orgs
     findAll() {
         return this.model.find();
+    }
+
+    // find all FIs
+    findAllFI() {
+        return this.model.find({ isCompany: false });
     }
 
     // find org's id by name
