@@ -36,7 +36,7 @@ export default {
             }
             this.$http.post("/org", org)
                 .then(() => {
-                    this.$message('成功添加金融机构！');
+                    this.$message('成功添加金融机构');
                 })
                 .catch(err => {
                     console.log(err);
