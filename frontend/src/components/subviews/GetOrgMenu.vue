@@ -54,7 +54,6 @@ export default {
                 .then(res => {
                     if (res.status == 200) {
                         const org = JSON.parse(res.request.response);
-\\
                         const text = "信用积分为 " + org.reputation + " 分" + "，" +
                             "仍未支付的款项为 " + org.moneyToPay + " 元" + "，" +
                             "仍未收到的款项为 " + org.moneyToReceive + " 元。"
