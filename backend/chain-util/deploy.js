@@ -12,7 +12,7 @@ const contractAddrPath = contractFolderPath + '/address.txt';
 const fs = require('fs');
 
 const deployContract = async () => {
-    let deployResult = await service.deploy(contractPath, contractFolderPath);
+    const deployResult = await service.deploy(contractPath, contractFolderPath);
     console.log('Contract Address: ' + deployResult.contractAddress);
     fs.writeFile(contractAddrPath, deployResult.contractAddress, (err) => {
         if (err) {

@@ -38,11 +38,11 @@ const callFunction = async (functionName, parameters) => {
 
             if (item.constant) {
                 return service.call(contractAddr, functionName, parameters).then(result => {
-                    let status = result.result.status;
-                    let ret = {
+                    const status = result.result.status;
+                    const ret = {
                         status: status
                     };
-                    let output = result.result.output;
+                    const output = result.result.output;
                     if (output !== '0x') {
                         ret.output = utils.decodeMethod(item, output);
                     }
@@ -50,13 +50,13 @@ const callFunction = async (functionName, parameters) => {
                 });
             } else {
                 return service.sendRawTransaction(contractAddr, functionName, parameters).then(result => {
-                    let txHash = result.transactionHash;
-                    let status = result.status;
-                    let ret = {
+                    const txHash = result.transactionHash;
+                    const status = result.status;
+                    const ret = {
                         transactionHash: txHash,
                         status: status
                     };
-                    let output = result.output;
+                    const output = result.output;
                     if (output !== '0x') {
                         ret.output = utils.decodeMethod(item, output);
                     }

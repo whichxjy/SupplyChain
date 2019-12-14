@@ -10,3 +10,9 @@ npm install
 ```
 npm start
 ```
+
+## Deploy smart contract
+
+```
+node chain-util/deploy.js
+```

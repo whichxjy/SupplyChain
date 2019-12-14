@@ -26,7 +26,7 @@ route.post('/org', (req, res) => {
 // get org
 route.get('/org', (req, res) => {
     const { name } = req.query;
-    let org = {};
+    const org = {};
     repository.findIDByName(name)
         .then(id => {
             chain.getReputation(id)
@@ -133,7 +133,7 @@ route.post('/fund', (req, res) => {
         .catch(err => { console.log(err) });
 });
 
-// get reputation
+// pay back
 route.delete('/payment', (req, res) => {
     const { name, amount, currentTime } = req.query;
     repository.findIDByName(name)
