@@ -1,32 +1,32 @@
 <template>
-<div id="app">
+  <div id="app">
     <el-header>
-        <MainNav></MainNav>
+      <MainNav></MainNav>
     </el-header>
     <el-main>
-        <router-view></router-view>
+      <router-view></router-view>
     </el-main>
-</div>
+  </div>
 </template>
 
 <script>
-import MainNav from './components/MainNav.vue'
+import MainNav from "./components/MainNav.vue"
 
 export default {
-    name: 'app',
-    components: {
-        MainNav
-    }
+  name: "app",
+  components: {
+    MainNav
+  }
 }
 </script>
 
 <style>
 #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
